@@ -108,3 +108,21 @@ td{
     padding: 0px !important;
 
 }
+.bi{
+background-color: blue;
+color:black;
+padding: 2px;
+font-size: 20px;
+}
+.fa{
+    background-color: red;
+    padding: 4px;
+    color: black;   
+    font-size: 20px;
+}
+.bi1{
+    background-color:aqua;
+    color: black;
+    padding: 2px;
+    font-size: 20px;
+}
