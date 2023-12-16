@@ -5,16 +5,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const dateInput = document.querySelector('.for input[type="date"]');
     const submitButton = document.querySelector('.submit');
     const tbody = document.getElementById("tbody");
+    const descr = document.getElementById('description');
+    const statutSelect =document.getElementById('choix1');
+    const statut = ["Nouveau", "En cours", "Terminé"];
     let tasks = [];
 
     submitButton.addEventListener("click", function () {
         const categorieValue = categories[categorieSelect.selectedIndex];
       const titreValue = titreInput.value;
       const dateValue = dateInput.value;
-
+const descrValue= descr.value;
+const statutValue = statut[statutSelect.selectedIndex];
       if (categorieValue && titreValue && dateValue) {
         // Ajouter la tâche au tableau
-        tasks.push({ categorie: categorieValue, titre: titreValue, date: dateValue });
+        tasks.push({ categorie: categorieValue, titre: titreValue, date: dateValue, description: descrValue, statut:statutValue});
 
         // Mettre à jour le tableau HTML
         updateTable();
