@@ -1,0 +1,110 @@
+
+.contener{
+    height: 90vh;
+    width: 90%;
+    border: 1px solid  rgb(105,167,169);
+padding: 0;
+margin: 10px;
+    border-radius: 10px;
+    display: flex;
+  
+}
+.tache{
+    width :20%;
+    height: 90vh;
+    border-right: 1px solid rgb(105,167,169);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.ajou{
+    height: 30px;
+    background-color:rgb(105,167,169);
+    color: aliceblue;
+    text-align: center;
+    border-top-left-radius: 10px;
+    font-size: 20px ;
+}
+.submit{
+    border: none;
+    width: 90%;
+    border-radius: 5px;
+    color: white;
+    background-color:rgb(105,167,169) ;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.for{
+    border-bottom: 1px solid rgb(105,167,169);
+}
+h4{
+    text-align: center;
+    color: rgb(105,167,169) !important;
+}
+.list{
+    height: 90vh;
+    width: 90%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+h3{
+    text-align: center;
+    color:rgb(105,167,169) !important;
+}
+td{
+  
+}
+.tabl{
+   background-color:rgb(3, 104, 107) ;
+   color: aliceblue;
+   border: 1px solid rgb(105,167,169) !important;
+
+}
+.list{
+
+height: 100% !important;
+
+  
+}
+.tableau{
+    height: 60%;
+    border: 1px solid rgb(105,167,169) !important;
+    width: 99% !important;
+    margin-left: 10px;
+}
+.fils{
+    height: 70% !important;
+    border-bottom: 1px solid  rgb(105,167,169);
+}
+.lorem{
+    width: 99% !important;
+    height: 20% !important;
+    border: 1px solid  rgb(105,167,169) !important;
+    margin-left: 10px;
+}
+.submit:hover{
+    background-color: aliceblue;
+    color: rgb(105,167,169) ;
+}
+.tbl1{
+    background-color:rgb(10, 158, 163) ;
+    color: aliceblue;
+    border: 1px solid rgb(105,167,169) !important;
+    
+}
+
+.date{
+    width:100!important;
+}
+
+.titre{
+width:px !important;
+}
+/* .categorie{
+width: 2089px !important;
+}  */
+td{
+    padding: 0px !important;
+
+}

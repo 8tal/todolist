@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="contener">
+      <div class="tache ">
+        <div class="ajou"> ajouter une tache</div><br>
+        <div class="for p-3 m">
+          <!-- <input class="form-control border-secondary" type="text" placeholder="Categorie"> <br> -->
+          <div class="form-group">
+            <label for="choix">Categorie:</label>
+            <select class="form-select" id="choix" name="choix">
+              <option value="option1">Academique</option>
+              <option value="option2">Extra-academique</option>
+              <option value="option3">Distraction</option>
+            </select>
+          </div><br>
+
+          <input class="form-control border-secondary" type="text" placeholder="Titre"> <br>
+          <input class="form-control border-secondary" type="date" >
+          <label for="exampleFormControlTextarea1"></label>
+          <textarea class="form-control border-secondary" id="exampleFormControlTextarea1" rows="3" placeholder="Description"></textarea><br>
+          <div class="form-group">
+            <label for="choix">Statut:</label>
+            <select class="form-select" id="choix1" name="choix1">
+              <option value="option1">Nouveau</option>
+              <option value="option2">Encours</option>
+              <option value="option3">Terminé</option>
+            </select>
+          </div><br>
+       <button type="submit" class="submit">Ajouter</button>
+        </div>
+        <div class="chart">
+          <h4>Statut</h4>
+<div class="chartjs">
+
+</div>
+        </div>
+        </div>
+        <div class="list">
+          <div class="fils">
+            <h3>List  de tache </h3>
+            <div class="tableau">
+              <table class="tabl   w-100">
+                <tbody id="tbody">
+                  <tr>
+                    <td>#</td>
+                    <td>Date</td>
+                    <td>Titre</td>
+                    <td class="cat">Catyegorie</td>
+                    <td>Operation</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+  <!-- div description -->
+
+          </div>
+          <H3>Description</H3>
+          <div class="lorem">
+
+          </div>
+          </div>
+
+        </div>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+</body>
+</html>
