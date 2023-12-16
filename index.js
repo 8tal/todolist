@@ -8,7 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const descr = document.getElementById('description');
     const statutSelect =document.getElementById('choix1');
     const statut = ["Nouveau", "En cours", "Terminé"];
+    const lorem = document.querySelector('.lorem')
     let tasks = [];
+    const cat = document.querySelector('.cat')
      // Charger les tâches depuis le localStorage au chargement de la page
      const stockedtask = localStorage.getItem('task');
      if (stockedtask) {
@@ -35,8 +37,11 @@ const statutValue = statut[statutSelect.selectedIndex];
       } else {
         alert("Veuillez remplir tous les champs !");
       }
+      // cat.addEventListener('click', function(){
+      //   divlorem=titreInput.value;
+      //   console.log(divlorem);
+      // })
     });
-
     function updateTable() {
       // Effacer le contenu actuel du tableau
       // / Effacer le contenu actuel du tableau
@@ -44,7 +49,7 @@ const statutValue = statut[statutSelect.selectedIndex];
             <td>#</td>
             <td>Date</td>
             <td>Titre</td>
-            <td class="cat">Categorie</td>
+            <td>Categorie</td>
             <td>Operation</td>
           </tr>`;
               // Remplir le tableau HTML avec les tâches
@@ -53,14 +58,19 @@ const statutValue = statut[statutSelect.selectedIndex];
                   row.innerHTML += `
                           <td>${index + 1}</td>
                           <td>${task.date}</td>
-                          <td>${task.titre}</td>
-                          <td class="cat">${task.categorie}</td>
-                          <td class="cat">
+                          <td class="cat">${task.titre}</td>
+                          <td>${task.categorie}</td>
+                          <td>
                           <i class="bi bi-eye"></i>
                           <i class="bi1 bi-pencil-fill"></i>
-                          <i class="fa fa-trash" aria-hidden="true" onclick="deleteline(${index})"> </i>
+                          <i class="fa fa-trash" aria-hidden="true"> </i>
                            </td>
                     `;
+                    row.addEventListener('click', function () {
+lorem.textContent = tasks[+row.children[0].textContent -1].description;
+
+                    })
       });
     }
+
   });
