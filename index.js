@@ -1,8 +1,19 @@
+let tasks = [];
 function viewLine(index) {
   const customAlert = document.getElementById('customAlert');
   const customAlertMessage = document.getElementById('customAlertMessage');
   customAlertMessage.textContent = 'information tache.';
   customAlert.style.display = 'block';
+  const positifDiv = document.querySelector('.positif');
+  const task = tasks[index];
+  console.log(task);
+  positifDiv.innerHTML = `
+    <p>Categorie: ${task.categorie}</p>
+    <p>Titre: ${task.titre}</p>
+    <p>Date: ${task.date}</p>
+    <p>Description: ${task.description}</p>
+    <p>Statut: ${task.statut}</p>
+  `;
 }
 document.addEventListener("DOMContentLoaded", function () {
   const categories = ["Academique", "Extra-academique", "Distraction"];
@@ -15,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const statutSelect = document.getElementById('choix1');
   const statut = ["Nouveau", "En cours", "Terminé"];
   const lorem = document.querySelector('.lorem')
-  let tasks = [];
   const bi = document.querySelector('.bi')
   const cat = document.querySelector('.cat')
   // Charger les tâches depuis le localStorage au chargement de la page
@@ -34,7 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const statutValue = statut[statutSelect.selectedIndex];
       if (categorieValue && titreValue && dateValue) {
           // Ajouter la tâche au tableau
-          tasks.push({ categorie: categorieValue, titre: titreValue, date: dateValue, description: descrValue, statut: statutValue });
+          tasks.push({ categorie: categorieValue, titre: titreValue, date: dateValue, description: descrValue, statut: statutValue
+            }
+            );
+
           // Mettre à jour le tableau HTML
           updateTable();
           // mettre a jour le localstorage
@@ -47,7 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
           alert("Veuillez remplir tous les champs !");
       }
   });
-
   function updateTable() {
       // Effacer le contenu actuel du tableau
       tbody.innerHTML = `<tr>
@@ -72,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
               </td>
           `;
           row.addEventListener('click', function () {
+
               lorem.textContent = tasks[+row.children[0].textContent - 1].description;
           });
       });
@@ -95,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!customAlert.contains(target)) {
           // let's hide the div
           customAlert.style.display = 'none';
+  
       }
   });
 });

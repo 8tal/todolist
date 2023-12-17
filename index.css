@@ -135,11 +135,11 @@ font-size: 20px;
 .divView {
     display: none;
     position: absolute;
-    bottom: 60%;
-    left: 40%;
-    height: 20% !important;
+    bottom: 50%;
+    left: 30%;
+    height: 30% !important;
   width: 25% !important;
-    border: 1px solid blue;
+    border: 1px solid rgb(106,167,170);;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     text-align: center;
   }
@@ -148,13 +148,10 @@ font-size: 20px;
     display: block;
     margin-bottom: 10px;
   }
-  
-  
   #customAlertMessage{
   background-color:rgb(106,167,170);
   color: white;
-
-  border: 1px solid red;
+  border: 1px solid rgb(106,167,170);
   }
   .positif{
     background-color: white;
