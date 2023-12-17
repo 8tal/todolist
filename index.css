@@ -129,3 +129,34 @@ font-size: 20px;
 .cat{
     cursor: pointer;
 }
+.bi{
+    cursor: pointer;
+}
+.divView {
+    display: none;
+    position: absolute;
+    bottom: 60%;
+    left: 40%;
+    height: 20% !important;
+  width: 25% !important;
+    border: 1px solid blue;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .custom-alert-message {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  
+  #customAlertMessage{
+  background-color:rgb(106,167,170);
+  color: white;
+
+  border: 1px solid red;
+  }
+  .positif{
+    background-color: white;
+ 
+  }
