@@ -15,13 +15,40 @@ function viewLine(index) {
   `;
 }
 let lorem;
+let newChart;
+function chart(){
+  if(newChart) newChart.destroy()
+  const nouveau = tasks?.filter(item => item.statut==="Nouveau")?.length ?? 0;
+  const encours = tasks?.filter(item => item.statut==="En cours")?.length ?? 0;
+  const termine = tasks?.filter(item => item.statut==="Terminé")?.length ?? 0;
+  const ctx = document.getElementById('myChart');
+  newChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+     labels: ['Nouveau', 'En cours','Terminé'],
+      datasets: [{
+        label: "Nouveau",
+        data: [nouveau,encours,termine],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          display:false,
+          beginAtZero: true
+        }
+      }
+    }
+  });
+}
 // function deleteline
 function deleteline(index) {
     console.log(index);
     tasks.splice(index, 1)
     localStorage.setItem('task', JSON.stringify(tasks));
     updateTable();
-
+    chart();
   }
   let categorieSelect;
   let categories;
@@ -79,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const statutValue = statut[statutSelect.selectedIndex];
       if (categorieValue && titreValue && dateValue) {
           // Ajouter la tâche au tableau
-          tasks.push({ categorie: categorieValue, titre: titreValue, date: dateValue, description: descrValue, statut: statutValue
+          tasks.push({ categorie: categorieValue, titre: titreValue, date: dateValue, description: descrValue,   statut: statut[statutSelect.selectedIndex]
             }
             );
 
@@ -91,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
           titreInput.value = "";
           dateInput.value = "";
           descr.value = "";
+          chart();
       } else {
           alert("Veuillez remplir tous les champs !");
       }
@@ -115,6 +143,9 @@ document.addEventListener("DOMContentLoaded", function () {
           customAlert.style.display = 'none';
       }
   });
+
+
+chart();
 });
 
 function updateTable() {
@@ -147,23 +178,4 @@ function updateTable() {
         });
     });
 }
-const ctx = document.getElementById('myChart');
 
-new Chart(ctx, {
-  type: 'pie',
-  data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      borderWidth: 1
-    }]
-  },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
