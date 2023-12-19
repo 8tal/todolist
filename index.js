@@ -23,6 +23,33 @@ function deleteline(index) {
     updateTable();
 
   }
+  let categorieSelect;
+  let categories;
+//   function editline
+function editline(index) {
+    // console.log(index);
+    // add1.style.display = 'block';
+    // btnAddexpense.style.display = 'none';
+    // categorieSelect.value = tasks[index + 1];
+    categorieValue = categories[categorieSelect.selectedIndex];
+    statutValue = statut[statutSelect.selectedIndex];
+    titreInput.value = tasks[index].titre;
+    descr.value=tasks[index].titre;
+    submitButton.addEventListener('click', function () {
+        // tasks[index + 1]=categorieSelect.value;
+      categories[categorieSelect.selectedIndex] =categorieValue;
+      statut[statutSelect.selectedIndex]=statutValue;
+      tasks[index].titre = titreInput.value;
+      tasks[index].description = descr.value;
+      titreInput.value = "";
+      descr.value= "";
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+//   add1.style.display = 'none';
+    //   btnAddexpense.style.display = 'block';
+      updateTable();
+//   document.location.reload();
+    })
+  }
 document.addEventListener("DOMContentLoaded", function () {
   const categories = ["Academique", "Extra-academique", "Distraction"];
   const categorieSelect = document.getElementById("choix");
@@ -109,7 +136,7 @@ function updateTable() {
             <td>${task.categorie}</td>
             <td>
                 <i class="bi bi-eye" onclick="event.stopPropagation();viewLine(${index})"></i>
-                <i class="bi1 bi-pencil-fill"></i>
+                <i class="bi1 bi-pencil-fill" onclick="editline(${index})"></i>
                 <i class="fa fa-trash" aria-hidden="true" onclick="event.stopPropagation();deleteline(${index
                 })"></i>
             </td>
@@ -120,3 +147,23 @@ function updateTable() {
         });
     });
 }
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+  type: 'pie',
+  data: {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [{
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
